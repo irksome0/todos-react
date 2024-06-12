@@ -1,0 +1,27 @@
+
+.Window{
+    width: 40svw;
+    min-height: 200px;
+
+    padding: 20px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    border: none;
+    border-radius: 2rem;
+
+    background-color: #F1F8E8;
+    box-shadow: 0px 5px 10px rgba(85, 173, 155,0.2);
+}
+.WindowTitle{
+    margin: 0;
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #55AD9B;
+
+    cursor: default;
+}

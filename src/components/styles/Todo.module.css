@@ -1,0 +1,62 @@
+
+.EmptyList{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #55AD9B;
+}
+.List{
+    display: flex;
+    width: 90%;
+    
+    justify-content: center;
+    flex-direction: column;
+}
+.ListItem{
+    width: calc(100% - 40px);
+    text-align: left;
+    padding: 10px 20px;
+    margin: 10px 0px;
+
+    border-radius: 0.75rem;
+
+    background-color: #55ad9b;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(241, 248, 232);
+
+    transition: .2s ease-in;
+}
+.ListItem:hover{
+    scale: 1.05;
+}
+.ListItem h3{
+    font-size: 1.4rem;
+    cursor: default;
+}
+.ListItem p{
+    font-size: 1.2rem;
+    cursor: default;
+}
+.ListItemHeader{
+    margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.DeleteButton{
+    position: relative;
+    font-size: 1.5rem;
+    top: 15px;
+    right: 10px;
+
+    cursor: pointer;
+
+    transition: .2s ease-in;
+}
+.DeleteButton:hover{
+    transform: scale(1.1);
+
+    color: #EE4E4E;
+}
