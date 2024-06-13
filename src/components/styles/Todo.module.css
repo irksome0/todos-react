@@ -30,20 +30,86 @@
 .ListItem:hover{
     scale: 1.05;
 }
-.ListItem h3{
+.ListItem input{
     font-size: 1.4rem;
     cursor: default;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 900;
+    margin: 10px 0;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(241, 248, 232);
+    outline: none;
 }
-.ListItem p{
+.ListItem input:disabled{
+    font-size: 1.4rem;
+    cursor: default;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 900;
+    margin: 10px 0;
+
+    background-color: transparent;
+    border: none;
+}
+.ListItem textarea{
     font-size: 1.2rem;
     cursor: default;
+    color: inherit;
+    font-family: inherit;
+    overflow: hidden;
+    resize: none;
+    width: 80%;
+    padding-bottom: 0;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(241, 248, 232);
+    outline: none;
 }
+.ListItem textarea:disabled{
+    font-size: 1.2rem;
+    cursor: default;
+    color: inherit;
+    font-family: inherit;
+    overflow: hidden;
+    resize: none;
+    width: 80%;
+
+    background-color: transparent;
+    border: none;
+}
+
 .ListItemHeader{
     margin: 0;
 
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+}
+.UpdateButton{
+    position: relative;
+    font-size: 1.25rem;
+    top: 13px;
+    right: 25px;
+    color: inherit;
+
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+
+    cursor: pointer;
+
+    transition: .2s ease-in;    
+
+    outline: none;
+}
+.UpdateButton:hover{
+    scale: 1.1;
+
+    color:rgb(132, 241, 200);
 }
 .DeleteButton{
     position: relative;

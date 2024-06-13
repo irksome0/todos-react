@@ -14,8 +14,8 @@ export const TodoForm = ({ onClose }) =>{
     const handleSubmit = (e: Event|SyntheticEvent) => {
         e.preventDefault();
 
-        const titleData = titleRef.current.value ?? "Nothing";
-        const dataData = dataRef.current.value ?? "Nothin";
+        const titleData = titleRef.current.value ?? "";
+        const dataData = dataRef.current.value ?? "";
 
         dispatch(addTodo({title: titleData, data: dataData}));
         onClose();
