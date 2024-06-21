@@ -1,12 +1,15 @@
 
 .CreateTodoButton{
+    display: inline-flex;
+    justify-content: center;
+
     padding: 10px 30px;
     margin: 20px 0;
     border: none;
     border-radius: 1rem;
     
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-style: italic;
     font-weight:700;
     color: rgb(241, 248, 232);
@@ -43,14 +46,14 @@
     width: 60svw;
 
     border: none;
-    border-radius: 1.75rem;
+    border-radius: 1.25rem;
 
     padding: 20px 10px;
 
     background-color: rgb(241, 248, 232);
 }
 .CreateMenuHeader{
-    width: 90%;
+    /* width: 90%; */
     margin: 20px 20px 20px 45px;
 
     display: flex;
@@ -90,7 +93,7 @@
 .TodoForm{
     display: flex;
     flex-direction: column;
-    margin: 30px 70px 20px 45px;
+    margin: 30px 45px 20px 45px;
 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5rem;
@@ -103,22 +106,21 @@
 }
 .TodoForm input{
     border: none;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px rgb(69, 141, 127);
     background-color: transparent;
 
     font-family: inherit;
     font-size: 1.25rem;
 
     padding: 5px 20px;
-
-    width: 200px;
+    max-width: 200px;
 }
 .TodoForm input:focus{
     outline: none;
 }
 .TodoForm textarea{
     border: none;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px rgb(69, 141, 127);
     background-color: transparent;
 
     padding: 5px 20px;
@@ -130,4 +132,28 @@
 }
 .TodoForm textarea:focus{
     outline: none;
+}
+
+@media (max-width: 1000px){
+    .CreateTodoButton{
+        font-size: 1.5rem;
+    }
+    .CreateMenu{
+        width: 80svw;
+    }
+    .TodoForm{
+        font-size: 1rem;
+    }
+    .CreateMenuHeader h1{
+        font-size:1.5rem;
+    }
+    .CreateMenuExit{
+        font-size: 2rem;
+    }
+    .TodoForm input{
+        font-size: 0.75rem;
+    }
+    .TodoForm textarea{
+        font-size: 0.75rem;
+    }
 }
