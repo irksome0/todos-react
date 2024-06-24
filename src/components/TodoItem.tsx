@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useEffect, useRef, useState } from "react"
+import React, { SyntheticEvent, useEffect, useState } from "react"
 import styles from "./styles/Todo.module.css"
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
@@ -15,14 +15,20 @@ export const TodoItem = (props: TodoState) => {
 
     const dispatch = useAppDispatch();
 
-    const titleRef = useRef<any>();
-    const dataRef = useRef<any>();
+    const [titleValue,setTitle] = useState("");
+    const [dataValue, setData] = useState("");
+
+
+    useEffect(()=>{
+        setTitle(props.title)
+        setData(props.data)
+    },[props])
 
     useEffect(()=>{
         const textArea = document.getElementById(`${props.id}area`) as HTMLTextAreaElement;
         
         textArea.style.height = textArea.scrollHeight + "px"
-    },[props.id])
+    },[dataValue])
 
     const [isEditing, setIsEditing] = useState(false);
 
@@ -32,11 +38,7 @@ export const TodoItem = (props: TodoState) => {
 
     const handleEditing = () => {
         setIsEditing((prev) => !prev);
-
         if(!isEditing){
-            const titleValue = titleRef.current.value ?? "";
-            const dataValue = titleRef.current.value ?? "";
-
             dispatch(updateTodo({id:props.id, title: titleValue, data:dataValue}))
         }
     }
@@ -49,16 +51,17 @@ export const TodoItem = (props: TodoState) => {
 
     return(
         <form onSubmit={handleEdit} className={styles.ListItem}>
-                    <div className={styles.ListItemHeader}>
-                        <input disabled={!isEditing} ref={titleRef} defaultValue={props.title}/>
-                        <div>
-                            <button className={styles.UpdateButton} type="submit">
-                                <FaEdit id={props.id}/>
-                            </button>
-                            <AiFillDelete id={props.id} onClick={handleDeleteTodo} className={styles.DeleteButton}/>
-                        </div>
-                    </div>
-                    <textarea id={`${props.id}area`} disabled={!isEditing} ref={dataRef} defaultValue={props.data}/>
+            <div className={styles.ListItemHeader}>
+                <input disabled={!isEditing} value={titleValue} onChange={event => setTitle(event.target.value)}/>
+                <div>
+                    <button className={styles.UpdateButton} type="submit">
+                        <FaEdit id={props.id}/>
+                    </button>
+                    <AiFillDelete id={props.id} onClick={handleDeleteTodo} className={styles.DeleteButton}/>
+                </div>
+            </div>
+            <textarea id={`${props.id}area`} disabled={!isEditing} value={dataValue} onChange={event => setData(event.target.value)}/>
         </form>
     )
+
 }
