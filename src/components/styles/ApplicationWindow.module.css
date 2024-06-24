@@ -1,17 +1,18 @@
 
 .Window{
-    width: 40svw;
+    width: 50svw;
     min-height: 200px;
 
-    padding: 20px 10px;
+    padding: 20px 40px;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
 
     border: none;
-    border-radius: 2rem;
+    border-radius: 1.25rem;
 
     background-color: #F1F8E8;
     box-shadow: 0px 5px 10px rgba(85, 173, 155,0.2);
@@ -20,8 +21,14 @@
     margin: 0;
 
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.5vmax;
     color: #55AD9B;
 
     cursor: default;
 }
+@media (max-width:800px) {
+    .Window{
+        width: 80svw;
+    }
+}
+    

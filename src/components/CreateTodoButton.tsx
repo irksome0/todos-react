@@ -11,7 +11,7 @@ export const CreateTodoButton = () => {
     }
 
     return (
-        <div style={{width:"50%"}}>
+        <>
             <button onClick={handleShowMenu} className={styles.CreateTodoButton}>
                 Create a new todo
             </button>
@@ -19,6 +19,6 @@ export const CreateTodoButton = () => {
                     <CreateTodoMenu onClose={() => setMenuShow(false)}></CreateTodoMenu>,
                     document.body
                 )}
-        </div>
+        </>
     )
 }

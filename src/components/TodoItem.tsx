@@ -24,18 +24,16 @@ export const TodoItem = (props: TodoState) => {
         setData(props.data)
     },[props])
 
-    useEffect(()=>{
-        const textArea = document.getElementById(`${props.id}area`) as HTMLTextAreaElement;
-        
-        textArea.style.height = textArea.scrollHeight + "px"
-    },[dataValue])
-
     const [isEditing, setIsEditing] = useState(false);
 
     const handleDeleteTodo = (e) =>{
         dispatch(deleteTodo(e.currentTarget.id))
     }
 
+    const resize = (e) => {
+        e.currentTarget.style.height = "5px";
+        e.currentTarget.style.height = e.currentTarget.scrollHeight + "px"; 
+    }
     const handleEditing = () => {
         setIsEditing((prev) => !prev);
         if(!isEditing){
@@ -60,7 +58,7 @@ export const TodoItem = (props: TodoState) => {
                     <AiFillDelete id={props.id} onClick={handleDeleteTodo} className={styles.DeleteButton}/>
                 </div>
             </div>
-            <textarea id={`${props.id}area`} disabled={!isEditing} value={dataValue} onChange={event => setData(event.target.value)}/>
+            <textarea id={`${props.id}area`} onInput={resize} disabled={!isEditing} value={dataValue} onChange={event => setData(event.target.value)}/>
         </form>
     )
 

@@ -18,7 +18,7 @@
     padding: 10px 20px;
     margin: 10px 0px;
 
-    border-radius: 0.75rem;
+    border-radius: 0.7rem;
 
     background-color: #55ad9b;
 
@@ -35,9 +35,8 @@
     cursor: default;
     color: inherit;
     font-family: inherit;
-    font-weight: 900;
-    margin: 10px 0;
-
+    font-weight: 900;   
+    max-width: 50%;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid rgb(241, 248, 232);
@@ -77,6 +76,7 @@
     overflow: hidden;
     resize: none;
     width: 80%;
+    
 
     background-color: transparent;
     border: none;
@@ -126,3 +126,19 @@
 
     color: #EE4E4E;
 }
+/* @media (max-width: 550px){
+    .ListItem input:disabled{
+        font-size: 1rem;
+    }
+    .ListItem input{
+        width: 40%;
+        font-size: 1rem;
+    }
+    .ListItem textarea:disabled{
+        font-size:0.9rem;
+    }
+    .ListItem textarea{
+        font-size:0.9rem;
+        width: 40%;
+    }
+} */
